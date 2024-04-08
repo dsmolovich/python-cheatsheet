@@ -39,8 +39,8 @@ Set:
 
 Note: an order of elements is not preserved thus
 there's a low chance of this test to pass 
->>> set_example
-{'cherry', 'apple', 'banana'}
+>>> set_example == {'cherry', 'apple', 'banana'}
+True
 >>> type(set_example)
 <class 'set'>
 >>> set_example = set(("apple", "banana", "cherry"))
