@@ -20,4 +20,3 @@ running register(active=False)->decorate(<function f2 at 0x...>)
 >>> registry  #doctest: +ELLIPSIS
 {<function f3 at 0x...>}
 """
-

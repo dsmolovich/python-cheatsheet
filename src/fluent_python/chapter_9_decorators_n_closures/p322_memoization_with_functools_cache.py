@@ -1,5 +1,5 @@
 import functools
-from implementing_decorator import clock
+from p319_implementing_decorator import clock
 
 @clock
 def fibonacci(n):
