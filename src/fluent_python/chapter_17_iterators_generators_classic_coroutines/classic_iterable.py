@@ -1,21 +1,7 @@
 class IterableList:
     """
-    >>> iterable_list = IterableList()
-    >>> next(iterable_list)
-    'A'
-    >>> next(iterable_list)
-    'B'
-    >>> next(iterable_list)
-    10
-    >>> next(iterable_list)
-    'abc'
-    >>> next(iterable_list)
-    Traceback (most recent call last):
-        ...
-    StopIteration
-
-    >>> iterable_list = IterableList()
-    >>> for item in iterable_list:
+    >>> it = IterableList()
+    >>> for item in it:
     ...     print(item)
     ...
     A
@@ -23,17 +9,31 @@ class IterableList:
     10
     abc
 
+    >>> it = IterableList()
+    >>> next(it)
+    'A'
+    >>> next(it)
+    'B'
+    >>> next(it)
+    10
+    >>> next(it)
+    'abc'
+    >>> next(it)
+    Traceback (most recent call last):
+        ...
+    StopIteration
     """
     def __init__(self):
         self._items = ['A', 'B', 10, 'abc']
         self._index = 0
     
     def __iter__(self):
-        return self    
+        return self
 
     def __next__(self):
-        if self._index >= len(self._items):
+        try:
+            item = self._items[self._index]
+            self._index += 1
+            return item
+        except IndexError:
             raise StopIteration
-        item = self._items[self._index]
-        self._index += 1
-        return item
